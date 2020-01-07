@@ -11,6 +11,24 @@
 </head>
 
 <body>
+    <div class="navbar-fixed">
+        <nav class="z-depth-3">
+            <div class="nav-wrapper blue darken-4">
+                <span style="padding-left: 1rem;" class="space-header">Daniel Peterson</span>
+                <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="{% url 'beer-tobacco' %}">Beer/Tobacco</a></li>
+                    <li><a href="{% url 'hunting-fishing' %}">Hunting/Fishing</a></li>
+                    <li><a href="{% url 'menu' %}">Menu</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <ul class="sidenav" id="mobile-nav">
+        <li><a href="{% url 'beer-tobacco' %}">Beer/Tobacco</a></li>
+        <li><a href="{% url 'hunting-fishing' %}">Hunting/Fishing</a></li>
+        <li><a href="{% url 'menu' %}">Menu</a></li>
+    </ul>
     <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
 </body>
 </body>
