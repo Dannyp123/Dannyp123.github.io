@@ -1,12 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css" media="screen,projection" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js" defer></script>
+    <script src="handlebars-JS/data.js" defer></script>
+    <script src="handlebars-JS/projects.js" defer></script>
+
     <title>Projects</title>
 </head>
-<body>
-    
+<style>
+    .title {
+        padding-left: 1rem;
+    }
+
+    .font-weight {
+        font-weight: bold;
+    }
+
+    .mrgin-top {
+        margin-top: 2rem;
+    }
+
+    .italicized {
+        font-style: italic;
+    }
+
+    .underlined {
+        text-decoration: underline;
+    }
+
+    .mrgin-bott {
+        margin-bottom: 1rem;
+    }
+</style>
+
+
+<body class="grey darken-4">
+    <div class="navbar-fixed">
+        <nav class="z-depth-3">
+            <div class="nav-wrapper  indigo accent-4">
+                <span class="space-header white-text flow-text title font-weight">Daniel Peterson</span>
+                <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down font-weight">
+                    <li><a class="white-text" href="index.html">About</a></li>
+                    <li><a class="white-text" href="languages.html">Languages</a></li>
+                    <li><a class="white-text" href="contact-info.html">Contact Information</a>
+                    </li>
+                    <li><a class="white-text" href="work-history.html">Work History</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <ul class="sidenav" id="mobile-nav">
+        <li><a href="index.html">About</a></li>
+        <li><a href="languages.html">Languages</a></li>
+        <li><a href="contact-info.html">Contact Information</a></li>
+        <li><a href="work-history.html">Work History</a></li>
+    </ul>
+
+    <div id="projectsTemplate"></div>
+    <script id="projects" type="text/x-handlebars-template">
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m12 l12">
+                    <div class="card grey darken-3 hoverable">
+                        <div class="card-content">
+                            <span class="card-title white-text">{{project.title}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".sidenav").sidenav();
+            $(".dropdown-trigger").dropdown();
+        });
+    </script>
 </body>
+
 </html>
