@@ -38,6 +38,14 @@
     .mrgin-bott {
         margin-bottom: 1rem;
     }
+
+    .card-padding {
+        padding-bottom: 1rem;
+    }
+
+    .link-padding {
+        padding-top: 1rem;
+    }
 </style>
 
 
@@ -64,14 +72,54 @@
         <li><a href="work-history.html">Work History</a></li>
     </ul>
 
-    <div id="projectsTemplate"></div>
+    <div id="projectsTemplate">
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m12 l12">
+                    <h1 class="flow-text white-text center-align">Projects</h1>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </div>
     <script id="projects" type="text/x-handlebars-template">
         <div class="container">
             <div class="row">
                 <div class="col s12 m12 l12">
                     <div class="card grey darken-3 hoverable">
                         <div class="card-content">
-                            <span class="card-title white-text">{{project.title}}</span>
+                            <span class="card-title white-text underlined center-align">{{project.title}}</span>
+                        </div>
+                        <div class="card-content">
+                            <div class="row">
+                                <div class="col s12 m12 l6">
+                                    <div class="card-image">
+                                        {{#if project.videoLink}}
+                                        <a href="{{project.videoLink}}" target="_blank"><img class="col-lg-4 mt-4"    src="{{project.videoImg}}" /></a>
+                                        {{else}}
+                                        <img src="{{project.img}}">
+                                        {{/if}}
+                                    </div>
+                                </div>
+                                <div class="col s12 m12 l6">
+                                    <div class="card-padding">
+                                        <p class="center-align white-text flow-text link-padding"><a href="{{project.projectLink}}">Source Code</a></p>
+                                        {{#if project.pageLink}}
+                                        <p class="center-align" ><a href="{{project.pageLink}}" target="_blank">Live Demo</a></p>
+                                        {{else}}
+                                        <p class="center-align white-text flow-text">Sorry, there is not a live demo.</p>
+                                        {{/if}}
+                                        <div class="card-content">
+                                            <p class="center-align white-text">{{project.langs}}</p>
+                                        </div>
+                                        <div class="card-padding">
+                                            <p class="center-align white-text">
+                                                {{project.description}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
